@@ -1,46 +1,40 @@
 <template lang="pug">
-.texto-input
-  .texto-input__icone
-    q-icon(
-      color="white"
-      size="25px"
-      :name="Icone"
-    )
-  q-input.texto-input__input(
-    borderless
-    label-color="primary"
-    :type="TipoInput"
-    :placeholder="Placeholder"
-    :model-value="VModel"
-    :label="Titulo"
-  )
+q-input.texto-input__input(
+  borderless
+  label-color="primary"
+  :error="Erro"
+  :error-message="MensagemErro"
+  :type="TipoInput"
+  :placeholder="Placeholder"
+  :label="Titulo"
+)
+  template(v-slot:prepend)
+    .texto-input__icone
+      q-icon(
+        color="white"
+        size="25px"
+        :name="Icone"
+      )
 </template>
 
 <script lang="ts" setup>
 interface Props {
-  VModel: string | null
   Titulo: string
   Placeholder: string
   Icone: string
   TipoInput?: string
+  MensagemErro: string
+  Erro?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
-  VModel: null,
-  TipoInput: 'text'
+  VModel: '',
+  TipoInput: 'text',
+  Erro: false
 })
 </script>
 
 <style lang="scss" scoped>
-.texto-input {
-  height: 50px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid #e0dddd;
-  display: flex;
-  flex-direction: row;
-}
-
 .texto-input__icone {
   display: flex;
   flex-direction: column;
@@ -49,17 +43,19 @@ withDefaults(defineProps<Props>(), {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   background-color: $primary;
-  height: 100%;
-  width: 65px;
+  height: 50px;
+  width: 60px;
 }
 
 .texto-input__input {
+  background: #fff;
+  height: 50px;
+  padding: 0 10px 0 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 100%;
-  padding-left: 5px;
-  padding-bottom: 5px;
+  border-radius: 5px;
+  border: 1px solid #e0dddd;
+  font-size: 15px;
 }
 </style>

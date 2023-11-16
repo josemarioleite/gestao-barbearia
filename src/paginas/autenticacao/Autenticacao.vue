@@ -8,22 +8,56 @@
     .autenticacao__componentes__insercao-de-dados
       span.autenticacao--login LOGIN
       ATextoInput.autenticacao__insercao-de-dados--texto-input(
-        VModel=""
         Icone="person"
-        :Titulo="$t('Componentes.Input.Email.texto')"
-        :Placeholder="$t('Componentes.Input.Email.placeholder')"
+        v-model="$v.email.$model"
+        :Erro="$v.email.$error"
+        :MensagemErro="$t('Componentes.Login.Input.Obrigatorio.mensagem')"
+        :Titulo="$t('Componentes.Login.Input.Email.texto')"
+        :Placeholder="$t('Componentes.Login.Input.Email.placeholder')"
       )
       ATextoInput.autenticacao__insercao-de-dados--texto-input(
-        VModel=""
         Icone="password"
         TipoInput="password"
-        :Titulo="$t('Componentes.Input.Senha.texto')"
-        :Placeholder="$t('Componentes.Input.Senha.placeholder')"
+        v-model="$v.senha.$model"
+        :Erro="$v.senha.$error"
+        :MensagemErro="$t('Componentes.Login.Input.Obrigatorio.mensagem')"
+        :Titulo="$t('Componentes.Login.Input.Senha.texto')"
+        :Placeholder="$t('Componentes.Login.Input.Senha.placeholder')"
+      )
+      q-btn.autenticacao__botao-logar(
+        flat
+        @click="entrar"
+        :label="$t('Componentes.Login.Botao.texto')"
       )
 </template>
 
 <script lang="ts" setup>
+import { reactive } from 'vue'
+import { required } from '@vuelidate/validators'
+import { useVuelidate } from '@vuelidate/core'
 import ATextoInput from './ATextoInput.vue'
+
+const campos = reactive({
+  email: '',
+  senha: ''
+})
+
+const regras = {
+  email: { required },
+  senha: { required }
+}
+
+const $v = useVuelidate(regras, campos)
+
+const entrar = async () => {
+  $v.value.$validate()
+
+  if (!$v.value.$error) {
+    return console.log('LOGADO')
+  }
+
+  return console.log('PREENCHER')
+}
 </script>
 
 <style lang="scss" scoped>
@@ -98,13 +132,49 @@ import ATextoInput from './ATextoInput.vue'
 
 .autenticacao__insercao-de-dados--texto-input {
   width: 60%;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.autenticacao__botao-logar {
+  background-color: $primary;
+  color: #fff;
+  border-radius: 15px;
+  width: 20%;
 }
 
 @media only screen and (max-width: 499px) {
   .autenticacao__componentes {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 70%;
+  }
+
+  .autenticacao__componentes__mensagem {
+    width: 100%;
+    border-radius: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .autenticacao__insercao-de-dados--texto-input {
     width: 90%;
-    height: 75%;
+  }
+
+  .autenticacao--login {
+    margin-top: 30px;
+  }
+
+  .autenticacao__botao-logar {
+    margin-bottom: 25px;
+  }
+
+  .autenticacao__componentes__subtitulo {
+    font-size: 1.1rem;
+  }
+
+  .autenticacao__botao-logar {
+    width: 150px;
   }
 }
 </style>

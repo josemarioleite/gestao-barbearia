@@ -4,14 +4,22 @@ export default {
     subtituloBoasVindas: 'we are always working to offer the best to you'
   },
   Componentes: {
-    Input: {
-      Email: {
-        texto: 'E-mail',
-        placeholder: 'enter the registered e-mail here'
+    Login: {
+      Botao: {
+        texto: 'log-in'
       },
-      Senha: {
-        texto: 'Password',
-        placeholder: 'enter the password here'
+      Input: {
+        Obrigatorio: {
+          mensagem: 'required field to fill in'
+        },
+        Email: {
+          texto: 'E-mail',
+          placeholder: 'enter the registered e-mail here'
+        },
+        Senha: {
+          texto: 'Password',
+          placeholder: 'enter the password here'
+        }
       }
     }
   }
