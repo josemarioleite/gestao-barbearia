@@ -1,7 +1,8 @@
 <template lang="pug">
 q-layout
-  Cabecalho
-  router-view
+  q-page-container
+    Cabecalho
+    router-view
 </template>
 
 <script lang="ts" setup>
