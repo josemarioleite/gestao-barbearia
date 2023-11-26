@@ -2,20 +2,20 @@
 
 Gerenciamento da melhor maneira o seu comércio
 
-## Install the dependencies
+## Instalando as dependências
 ```bash
 yarn
 # or
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+### Iniciando a aplicação com VITE
 ```bash
-quasar dev
+npm run dev
 ```
 
 
-### Lint the files
+### O projeto possui o LINT instalado, para seguir com as alterações
 ```bash
 yarn lint
 # or
@@ -24,10 +24,12 @@ npm run lint
 
 
 
-### Build the app for production
+### Fazer o build da aplicação para produção
 ```bash
 quasar build
 ```
 
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+### Aplicação foi montada usando alguns padrões de desenvolvimento como:
+### camelCase para variáveis;
+### B.E.M design para CSS;
+### Atomic Design para organização de pastas...

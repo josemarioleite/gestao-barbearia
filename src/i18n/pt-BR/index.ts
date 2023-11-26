@@ -4,6 +4,12 @@ export default {
     subtituloBoasVindas: 'estamos sempre trabalhando para oferecer o melhor a você'
   },
   Componentes: {
+    Cabecalho: {
+      menu: {
+        titulo: 'atendimento_cadastro',
+        itensCadastro: 'profissional_serviço'
+      }
+    },
     Login: {
       Botao: {
         texto: 'entrar'

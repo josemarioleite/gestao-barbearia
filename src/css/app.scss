@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Asap:wght@100&family=Nunito:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
 .fonte-padrao {
-  font-family: 'Asap', 'sans-serif';
+  font-family: 'Asap', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.fonte-tabela {
+.fonte-padrao-2 {
   font-family: 'Raleway', sans-serif;
+}
+
+.fonte-padrao-3 {
+  font-family: 'Roboto Slab', serif;
 }

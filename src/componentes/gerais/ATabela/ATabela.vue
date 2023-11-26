@@ -13,9 +13,9 @@ q-table.tabela(
     q-btn(flat dense icon-right="more_vert")
       q-menu( fit anchor="bottom left" self="center end")
         q-list.tabela__menu-opcoes(style="width: 175px")
-          q-toggle.q-mb-md.fonte-tabela(v-model="visaoCelula" color="red" label="Célula")
-          q-toggle.q-mb-md.fonte-tabela(v-model="visaoHorizontal" color="green" label="Linha Horizontal")
-          q-toggle.q-mb-md.fonte-tabela(v-model="visaoVertical" color="yellow" label="Linha Vertical")
+          q-toggle.q-mb-md.fonte-padrao-2(v-model="visaoCelula" color="red" label="Célula")
+          q-toggle.q-mb-md.fonte-padrao-2(v-model="visaoHorizontal" color="green" label="Linha Horizontal")
+          q-toggle.q-mb-md.fonte-padrao-2(v-model="visaoVertical" color="yellow" label="Linha Vertical")
 
   template(v-slot:header="props")
     q-tr(:props="props")
@@ -66,7 +66,7 @@ const exibirValor = (valor: unknown) => {
 .tabela__menu-opcoes {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   height: auto;
   padding-top: 10px;

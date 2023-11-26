@@ -1,11 +1,10 @@
 import { boot } from 'quasar/wrappers'
 
 import Idioma from 'src/componentes/idioma/Idioma.vue'
-import Tabela from 'src/componentes/gerais/tabela/Tabela.vue'
-import Input from 'src/componentes/gerais/input/Input.vue'
+import { AInput, ATabela } from 'src/componentes/gerais'
 
 export default boot(async ({ app }) => {
   app.component('idioma', Idioma)
-  app.component('v-tabela', Tabela)
-  app.component('v-texto', Input)
+  app.component('v-tabela', ATabela)
+  app.component('v-texto', AInput)
 })

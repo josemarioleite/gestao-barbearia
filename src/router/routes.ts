@@ -3,6 +3,7 @@ import { RouteRecordRaw } from 'vue-router'
 // Páginas
 import Home from 'src/paginas/Home.vue'
 import Autenticacao from 'src/paginas/autenticacao/Autenticacao.vue'
+import Atendimento from 'src/paginas/atendimento/Atendimento.vue'
 import Produtos from 'src/paginas/produto/Produto.vue'
 import NovoProduto from 'src/paginas/produto/NovoProduto.vue'
 
@@ -16,6 +17,11 @@ const routes: RouteRecordRaw[] = [
     path: '/auth',
     component: Autenticacao,
     name: 'autenticacao'
+  },
+  {
+    path: '/atendimento',
+    component: Atendimento,
+    name: 'atendimento'
   },
   {
     path: '/produtos',

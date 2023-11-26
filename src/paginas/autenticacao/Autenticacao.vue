@@ -87,7 +87,6 @@ const entrar = async () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   border-bottom-left-radius: 15px;
   border-top-left-radius: 15px;
   color: #fff;
