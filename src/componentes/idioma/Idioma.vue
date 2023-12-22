@@ -1,7 +1,7 @@
 <template lang="pug">
 q-select.idioma(
-  v-model="$i18n.locale"
   borderless
+  v-model="$i18n.locale"
   option-label="nome"
   option-value="valor"
   @update:model-value="mudarIdiomaLocal"
@@ -61,4 +61,8 @@ export default defineComponent({
 
 <style lang="scss">
 @import url('./idioma.scss');
+
+.q-field__native span {
+  color: #fff !important;
+}
 </style>

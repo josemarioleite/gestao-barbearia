@@ -1,6 +1,6 @@
 <!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <template lang="pug">
-q-header.cabecalho(v-if="exibirCabecalho" bordered)
+q-header.cabecalho(v-if="exibirCabecalho" elevated reveal)
   template(v-if="true" v-for="(item, chave) in menuCabecalho" :key="chave")
     q-btn.cabecalho__botao.fonte-padrao(
       flat
